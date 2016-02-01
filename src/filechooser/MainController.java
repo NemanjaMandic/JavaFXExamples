@@ -17,6 +17,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.stage.FileChooser;
 
 
@@ -33,7 +35,20 @@ public class MainController implements Initializable {
    @FXML
    private ListView listView;
    
-   MyNumber myNum = new MyNumber();
+   @FXML
+   private ProgressBar progressBar;
+   
+   @FXML
+   private ProgressIndicator progressIndicator;
+   
+   @FXML
+   private Button incrementButton;
+   
+     
+   @FXML
+   private Button decrementButton;
+   
+   final MyNumber myNum = new MyNumber();
    
    public void selectOneAction(ActionEvent event){
        FileChooser fc = new FileChooser();
@@ -64,16 +79,27 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
        myNum.setNumber(0);
-       myNum.numberProperty().addListener(new ChangeListener<Number>() {
+      
+     /*  myNum.numberProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
+           labelStatus.setText(Double.toString(myNum.getNumber()));
+       });
+             */
+       myNum.numberProperty().addListener(new ChangeListener<Object>(){
 
            @Override
-           public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-            labelStatus.setText(new Double(myNum.getNumber()).toString());
+           public void changed(ObservableValue<? extends Object> observable, Object oldValue, Object newValue) {
+             progressBar.progressProperty().bind(myNum.numberProperty()); // bind progress bar to number property
+             progressIndicator.progressProperty().bind(myNum.numberProperty());// bind progress indicator to number property
            }
+           
        });
     }
     
-    public void btnClick(ActionEvent ev){
-        myNum.setNumber(myNum.getNumber() + 1);
+    public void incrementClick(ActionEvent ev){
+        myNum.setNumber(myNum.getNumber() + 0.1);
+    }
+    
+    public void decrementClick(ActionEvent ev){
+        myNum.setNumber(myNum.getNumber() - 0.1);
     }
 }
