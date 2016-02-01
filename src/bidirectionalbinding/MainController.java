@@ -6,8 +6,12 @@
 package bidirectionalbinding;
 
 import java.net.URL;
+import java.text.NumberFormat;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -16,12 +20,18 @@ import javafx.fxml.Initializable;
  */
 public class MainController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private Slider slider;
+    @FXML
+    private TextField textField;
+    
+    private static final double INITIAL_VALUE = 50;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+      slider.setValue(INITIAL_VALUE);
+      textField.setText(Double.toString(INITIAL_VALUE));
+      textField.textProperty().bindBidirectional(slider.valueProperty(), NumberFormat.getNumberInstance());
     }    
     
 }

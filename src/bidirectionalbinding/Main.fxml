@@ -6,6 +6,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bidirectionalbinding.MainController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="456.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bidirectionalbinding.MainController">
+   <children>
+      <Slider fx:id="slider" layoutX="122.0" layoutY="100.0" prefHeight="50.0" prefWidth="213.0" />
+      <TextField fx:id="textField" layoutX="127.0" layoutY="200.0" prefHeight="25.0" prefWidth="204.0" />
+   </children>
 </AnchorPane>
