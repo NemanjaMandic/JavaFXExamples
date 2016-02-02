@@ -7,6 +7,8 @@ package menu;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 /**
@@ -19,9 +21,15 @@ public class MainController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
+      public void closeApp(ActionEvent event){
+          Platform.exit();
+          System.exit(0);
+    }
 }
