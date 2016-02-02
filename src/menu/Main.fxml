@@ -6,7 +6,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.MainController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
@@ -38,4 +37,16 @@
         </menus>
       </MenuBar>
    </top>
+   <left>
+      <Pane fx:id="checkboxPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <CheckBox fx:id="cbDog" layoutX="11.0" layoutY="59.0" mnemonicParsing="false" onAction="#checkEvent" text="Dog" />
+            <CheckBox fx:id="cbCat" layoutX="11.0" layoutY="94.0" mnemonicParsing="false" onAction="#checkEvent" text="Cat" />
+            <CheckBox fx:id="cbBird" layoutX="12.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkEvent" text="Bird" />
+            <CheckBox fx:id="cbCow" layoutX="13.0" layoutY="158.0" mnemonicParsing="false" onAction="#checkEvent" text="Cow" />
+            <Label fx:id="lblCount" layoutX="14.0" layoutY="205.0" prefHeight="41.0" prefWidth="179.0" />
+            <Label fx:id="lblList" layoutX="72.0" layoutY="59.0" prefHeight="124.0" prefWidth="98.0" />
+         </children>
+      </Pane>
+   </left>
 </BorderPane>
