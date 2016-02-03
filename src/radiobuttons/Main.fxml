@@ -6,6 +6,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="radiobuttons.MainController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="320.0" prefWidth="335.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="radiobuttons.MainController">
+   <children>
+      <RadioButton fx:id="rbMale" layoutX="81.0" layoutY="59.0" mnemonicParsing="false" onAction="#radioSelect" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="myGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbFemale" layoutX="81.0" layoutY="103.0" mnemonicParsing="false" onAction="#radioSelect" text="Female" toggleGroup="$myGroup" />
+      <Label fx:id="lbl" layoutX="75.0" layoutY="220.0" prefHeight="17.0" prefWidth="109.0" />
+   </children>
 </AnchorPane>

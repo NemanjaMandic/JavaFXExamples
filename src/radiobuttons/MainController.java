@@ -7,7 +7,11 @@ package radiobuttons;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 
 /**
  * FXML Controller class
@@ -16,9 +20,21 @@ import javafx.fxml.Initializable;
  */
 public class MainController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+   @FXML private RadioButton rbMale;
+   @FXML private RadioButton rbFemale;
+   @FXML private Label lbl;
+   
+   
+   public void radioSelect(ActionEvent event){
+       String message = "";
+       if(rbMale.isSelected()){
+           message += rbMale.getText();
+       }
+        if(rbFemale.isSelected()){
+           message += rbFemale.getText();
+       }
+        lbl.setText(message);
+   }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
