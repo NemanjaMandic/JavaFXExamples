@@ -6,8 +6,13 @@
 package datepicker;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -16,10 +21,14 @@ import javafx.fxml.Initializable;
  */
 public class MainController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
+   @FXML private DatePicker dp;
+   @FXML private Label showDate;
+   
+   public void showDateValue(ActionEvent event){
+       LocalDate ld = dp.getValue();
+       showDate.setText(ld.toString());
+   }
+    @Override 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
