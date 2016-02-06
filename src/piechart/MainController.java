@@ -10,10 +10,13 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.PieChart.Data;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -23,6 +26,7 @@ import javafx.scene.chart.PieChart.Data;
 public class MainController implements Initializable {
 
    @FXML private PieChart pieChart;
+   @FXML private Label status;
    
    public void getData(ActionEvent event){
        ObservableList<Data> list = FXCollections.observableArrayList(
@@ -33,6 +37,16 @@ public class MainController implements Initializable {
        new PieChart.Data("C", 15)
        );
        pieChart.setData(list);
+       
+       for(PieChart.Data data : pieChart.getData()){
+           data.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
+               @Override
+               public void handle(MouseEvent event) {
+                 status.setText(String.valueOf(data.getPieValue())+ "%");
+               }
+           });
+       }
    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
