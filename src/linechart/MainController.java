@@ -23,12 +23,13 @@ public class MainController implements Initializable {
     @FXML LineChart<String, Number> lineChart;
     
     public void loadChart(ActionEvent event){
+         lineChart.getData().clear();
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.getData().add(new XYChart.Data<>("Jan",200));
         series.getData().add(new XYChart.Data<>("Feb",500));
         series.getData().add(new XYChart.Data<>("Mar",300));
         series.getData().add(new XYChart.Data<>("Apr",600));
-       
+        series.setName("Month Pay");
         lineChart.getData().add(series);
     }
     @Override
