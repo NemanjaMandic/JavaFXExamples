@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="linechart.MainController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="linechart.MainController">
+   <children>
+      <LineChart fx:id="lineChart" prefHeight="365.0" prefWidth="600.0" title="Line Chart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button layoutX="51.0" layoutY="438.0" mnemonicParsing="false" onAction="#loadChart" text="Load Chart" />
+   </children>
 </AnchorPane>
