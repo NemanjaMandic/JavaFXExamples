@@ -24,13 +24,33 @@ public class MainController implements Initializable {
     
     public void loadChart(ActionEvent event){
          lineChart.getData().clear();
+        
+         // Line 1 on chart
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.getData().add(new XYChart.Data<>("Jan",200));
         series.getData().add(new XYChart.Data<>("Feb",500));
         series.getData().add(new XYChart.Data<>("Mar",300));
         series.getData().add(new XYChart.Data<>("Apr",600));
-        series.setName("Month Pay");
-        lineChart.getData().add(series);
+        series.setName("Month Pay 1");
+        
+        // Line 2 on chart
+        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+        series1.getData().add(new XYChart.Data<>("Jan",400));
+        series1.getData().add(new XYChart.Data<>("Feb",100));
+        series1.getData().add(new XYChart.Data<>("Mar",800));
+        series1.getData().add(new XYChart.Data<>("Apr",500));
+        series1.setName("Month Pay 2");
+        
+         // Line 3 on chart
+        XYChart.Series<String, Number> series2 = new XYChart.Series<>();
+        series2.getData().add(new XYChart.Data<>("Jan",490));
+        series2.getData().add(new XYChart.Data<>("Feb",145));
+        series2.getData().add(new XYChart.Data<>("Mar",870));
+        series2.getData().add(new XYChart.Data<>("Apr",566));
+        series2.setName("Month Pay 3");
+        
+        //Adding all lines on chart
+        lineChart.getData().addAll(series, series1, series2);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
