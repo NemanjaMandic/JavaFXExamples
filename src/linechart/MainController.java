@@ -8,10 +8,13 @@ package linechart;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -21,7 +24,7 @@ import javafx.scene.chart.XYChart;
 public class MainController implements Initializable {
 
     @FXML LineChart<String, Number> lineChart;
-    
+    @FXML Label lbl;
     public void loadChart(ActionEvent event){
          lineChart.getData().clear();
         
@@ -51,6 +54,18 @@ public class MainController implements Initializable {
         
         //Adding all lines on chart
         lineChart.getData().addAll(series, series1, series2);
+        
+        
+        // loop through series
+        for(final XYChart.Data<String, Number> data : series.getData()){
+            data.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent event) {
+                   lbl.setText("X: " + data.getXValue()+"\n" + "Y: " + String.valueOf(data.getYValue()));
+                }
+            }); //added mouse clicked event
+    }
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
