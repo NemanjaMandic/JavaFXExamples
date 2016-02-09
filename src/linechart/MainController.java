@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -63,6 +64,7 @@ public class MainController implements Initializable {
                 @Override
                 public void handle(MouseEvent event) {
                    lbl.setText("X: " + data.getXValue()+"\n" + "Y: " + String.valueOf(data.getYValue()));
+                    Tooltip.install(data.getNode(), new Tooltip("X: " + data.getXValue()+"\n" + "Y: " + String.valueOf(data.getYValue())));
                 }
             }); //added mouse clicked event
     }
