@@ -4,14 +4,19 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/tableview/Student.java</file>
-            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/linechart/Main.java</file>
             <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/linechart/Main.fxml</file>
-            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/webview/MainController.java</file>
             <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/webview/Main.fxml</file>
             <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/piechart/Main.java</file>
+            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/database/Login.fxml</file>
+            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/linechart/Main.java</file>
+            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/database/DatabaseConnection.java</file>
+            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/webview/MainController.java</file>
             <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/piechart/MainController.java</file>
             <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/webview/Main.java</file>
+            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/database/Main.java</file>
             <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/linechart/MainController.java</file>
+            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/database/LoginController.java</file>
+            <file>file:/C:/Users/nemus/Documents/NetBeansProjects/JavaFXExamples/src/database/LoginModel.java</file>
         </group>
     </open-files>
 </project-private>

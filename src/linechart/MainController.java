@@ -69,6 +69,8 @@ public class MainController implements Initializable {
             }); //added mouse clicked event
     }
     }
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
